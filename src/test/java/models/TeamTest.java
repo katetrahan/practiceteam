@@ -19,14 +19,14 @@ public class TeamTest {
 
     @Test
     public void team_teamInstantiatesCorrectly_String() throws Exception {
-        Member newMember = new Member("Oprah", "Winfrey", "Public Figure");
+        Member newMember = new Member("Oprah", "Winfrey");
         Team team = new Team("Hackers", "Java Course Team", newMember);
         assertEquals(true, team instanceof Team);
     }
 
     @Test
     public void team_teamInstantiatesCorrectlyWithContent_String() throws Exception {
-        Member newMember = new Member("Oprah", "Winfrey", "Public Figure");
+        Member newMember = new Member("Oprah", "Winfrey");
         Team team = new Team("Hackers", "Java Course Team", newMember);
         assertEquals("Hackers",team.getName());
 
@@ -34,7 +34,7 @@ public class TeamTest {
 
     @Test
     public void teamDescription_teamGetsDescription_String() throws Exception {
-        Member newMember = new Member("Oprah", "Winfrey", "Public Figure");
+        Member newMember = new Member("Oprah", "Winfrey");
         Team team = new Team("Hackers", "Java Course Team", newMember);
         assertEquals("Java Course Team", team.getDescription());
     }
@@ -42,7 +42,7 @@ public class TeamTest {
     @Test
     public void AllEntriesAreCorrectlyReturned_true() throws Exception {
         Team post = setupNewTeam();
-        Member newMember = new Member("Oprah", "Winfrey", "Public Figure");
+        Member newMember = new Member("Oprah", "Winfrey");
         Team team = new Team("Hackers", "Java Course Team", newMember);
         assertTrue(Team.getAll().contains(post));
         assertEquals(2, Team.getAll().size());
@@ -51,7 +51,7 @@ public class TeamTest {
     @Test
     public void AllEntriesContainsAllEntries_true() throws Exception {
         Team post = setupNewTeam();
-        Member newMember = new Member("Oprah", "Winfrey", "Public Figure");
+        Member newMember = new Member("Oprah", "Winfrey");
         Team team = new Team("Hackers", "Java Course Team", newMember);
         assertTrue(Team.getAll().contains(post));
         assertTrue(Team.getAll().contains(team));
@@ -73,7 +73,7 @@ public class TeamTest {
     @Test
     public void findReturnsCorrectEntryWhenMoreThanOnePostExists_Integer() throws Exception {
         Team post = setupNewTeam();
-        Member newMember = new Member("Oprah", "Winfrey", "Public Figure");
+        Member newMember = new Member("Oprah", "Winfrey");
         Team team = new Team("Hackers", "Java Course Team", newMember);
         assertEquals(2, Team.findById(team.getMemberId()).getMemberId());
     }
@@ -84,7 +84,7 @@ public class TeamTest {
         String formerName = post.getName();
         int formerId = post.getMemberId();
 
-        Member newMember = new Member("Oprah", "Winfrey", "Public Figure");
+        Member newMember = new Member("Oprah", "Winfrey");
         post.edit("New Hackers", "Best Team ever ", newMember);
 
         assertEquals(formerId, post.getMemberId());
@@ -106,7 +106,7 @@ public class TeamTest {
 
 
     public Member setupNewMember(){
-        return new Member ("Oprah", "Winfrey", "Public Figure");
+        return new Member ("Oprah", "Winfrey");
 
     }
 
