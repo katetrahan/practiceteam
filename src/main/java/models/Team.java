@@ -40,6 +40,10 @@ public class Team {
         return instances;
     }
 
+    public static Team findById(int teamId){
+        return instances.get(teamId-1);
+    }
+
 
     }
 

@@ -63,6 +63,15 @@ public class TeamTest {
         assertEquals(1, post.getMemberId());
     }
 
+    @Test
+    public void findReturnsCorrectEntry() throws Exception {
+        Team post = setupNewTeam();
+        assertEquals(1, Team.findById(post.getMemberId()).getMemberId());
+
+    }
+
+
+
 
 
 
