@@ -28,6 +28,18 @@ public class Team {
         return this.description;
     }
 
+    public Member getMember(){
+        return this.member;
+    }
+
+    public int getMemberId(){
+        return this.memberId;
+    }
+
+    public static ArrayList<Team> getAll(){
+        return instances;
+    }
+
 
     }
 

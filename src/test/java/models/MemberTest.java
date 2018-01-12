@@ -23,17 +23,19 @@ public class MemberTest {
 
     @Test
     public void member_getLast_String() {
-        Member member = new Member("Oprah", "Winfrey", "Public Figure");;
+        Member member = new Member("Oprah", "Winfrey", "Public Figure");
         assertEquals("Winfrey", member.getLast());
 
     }
 
     @Test
     public void member_getDescription_String() {
-        Member member = new Member("Oprah", "Winfrey", "Public Figure");;
+        Member member = new Member("Oprah", "Winfrey", "Public Figure");
         assertEquals("Public Figure", member.getDescription());
 
     }
+
+
 
 
 

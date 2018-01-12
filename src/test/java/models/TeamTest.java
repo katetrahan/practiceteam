@@ -39,6 +39,29 @@ public class TeamTest {
         assertEquals("Java Course Team", team.getDescription());
     }
 
+    @Test
+    public void AllEntriesAreCorrectlyReturned_true() throws Exception {
+        Team post = setupNewTeam();
+        Member newMember = new Member("Oprah", "Winfrey", "Public Figure");
+        Team team = new Team("Hackers", "Java Course Team", newMember);
+        assertEquals(2, Team.getAll().size());
+    }
+
+
+
+
+
+
+    public Member setupNewMember(){
+        return new Member ("Oprah", "Winfrey", "Public Figure");
+
+    }
+
+    public Team setupNewTeam(){
+
+        return new Team("Hackers", "Java Course Team", setupNewMember());
+    }
+
 
 
 
