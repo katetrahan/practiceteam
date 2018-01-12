@@ -70,6 +70,16 @@ public class TeamTest {
 
     }
 
+    @Test
+    public void findReturnsCorrectEntryWhenMoreThanOnePostExists() throws Exception {
+        Team post = setupNewTeam();
+        Member newMember = new Member("Oprah", "Winfrey", "Public Figure");
+        Team team = new Team("Hackers", "Java Course Team", newMember);
+        assertEquals(2, Team.findById(team.getMemberId()).getMemberId());
+    }
+
+
+
 
 
 
