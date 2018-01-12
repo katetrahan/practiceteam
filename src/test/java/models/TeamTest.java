@@ -58,25 +58,40 @@ public class TeamTest {
     }
 
     @Test
-    public void entriesInstantiateWithId() throws Exception {
+    public void entriesInstantiateWithId_Integer() throws Exception {
         Team post = setupNewTeam();
         assertEquals(1, post.getMemberId());
     }
 
     @Test
-    public void findReturnsCorrectEntry() throws Exception {
+    public void findReturnsCorrectEntry_Integer() throws Exception {
         Team post = setupNewTeam();
         assertEquals(1, Team.findById(post.getMemberId()).getMemberId());
 
     }
 
     @Test
-    public void findReturnsCorrectEntryWhenMoreThanOnePostExists() throws Exception {
+    public void findReturnsCorrectEntryWhenMoreThanOnePostExists_Integer() throws Exception {
         Team post = setupNewTeam();
         Member newMember = new Member("Oprah", "Winfrey", "Public Figure");
         Team team = new Team("Hackers", "Java Course Team", newMember);
         assertEquals(2, Team.findById(team.getMemberId()).getMemberId());
     }
+
+    @Test
+    public void updateChangesEntryContent_String() throws Exception {
+        Team post = setupNewTeam();
+        String formerName = post.getName();
+        int formerId = post.getMemberId();
+
+        Member newMember = new Member("Oprah", "Winfrey", "Public Figure");
+        post.edit("New Hackers", "Best Team ever ", newMember);
+
+        assertEquals(formerId, post.getMemberId());
+        assertNotEquals(formerName, post.getName());
+    }
+
+
 
 
 

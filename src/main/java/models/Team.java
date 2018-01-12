@@ -44,6 +44,13 @@ public class Team {
         return instances.get(teamId-1);
     }
 
+    public void edit(String name, String description, Member member){
+        this.name = name;
+        this.description = description;
+        this.member = member;
+
+    }
+
 
     }
 
