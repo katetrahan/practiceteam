@@ -32,6 +32,13 @@ public class TeamTest {
 
     }
 
+    @Test
+    public void teamDescription_teamGetsDescription_String() throws Exception {
+        Member newMember = new Member("Oprah", "Winfrey", "Public Figure");
+        Team team = new Team("Hackers", "Java Course Team", newMember);
+        assertEquals("Java Course Team", team.getDescription());
+    }
+
 
 
 
