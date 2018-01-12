@@ -14,4 +14,8 @@ public class Members {
         this.memberId = instances.size();
     }
 
+    public static void clearAll() {instances.clear();}
+
+
 }
+
