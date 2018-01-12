@@ -28,6 +28,13 @@ public class MemberTest {
 
     }
 
+    @Test
+    public void member_getDescription_String() {
+        Member member = new Member("Oprah", "Winfrey", "Public Figure");;
+        assertEquals("Public Figure", member.getDescription());
+
+    }
+
 
 
 
