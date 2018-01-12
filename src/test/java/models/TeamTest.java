@@ -12,4 +12,12 @@ public class TeamTest {
         assertEquals(true, team instanceof Team);
     }
 
+    @Test
+    public void team_getName_String() {
+        Team team = new Team("Hackers", "Epicodus Java Course Team");
+        assertEquals("Hackers", team.getName());
+
+
+    }
+
 }
