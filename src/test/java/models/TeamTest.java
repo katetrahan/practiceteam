@@ -24,6 +24,14 @@ public class TeamTest {
         assertEquals(true, team instanceof Team);
     }
 
+    @Test
+    public void team_teamInstantiatesCorrectlyWithContent_String() throws Exception {
+        Member newMember = new Member("Oprah", "Winfrey", "Public Figure");
+        Team team = new Team("Hackers", "Java Course Team", newMember);
+        assertEquals("Hackers",team.getName());
+
+    }
+
 
 
 

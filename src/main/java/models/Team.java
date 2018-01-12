@@ -17,7 +17,12 @@ public class Team {
     }
 
     public static void clearAll() {
-        instances.clear();}
+        instances.clear();
+    }
+
+    public String getName() {
+        return this.name;
+    }
 
 
     }
