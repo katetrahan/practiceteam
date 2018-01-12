@@ -64,7 +64,7 @@ public class App {
 
 
         //post: process a form to update Team
-        post("/addressBook/:addressId/edit", (request, response) -> {
+        post("/team/:memberId/edit", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             String first = request.queryParams("first");
             String last = request.queryParams("last");

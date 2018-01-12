@@ -40,8 +40,8 @@ public class Team {
         return instances;
     }
 
-    public static Team findById(int teamId){
-        return instances.get(teamId-1);
+    public static Team findById(int teamNameId){
+        return instances.get(teamNameId-1);
     }
 
     public void edit(String name, String description, Member member){
