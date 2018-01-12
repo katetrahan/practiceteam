@@ -23,8 +23,8 @@ public class App {
         //get: show name of input
         get("/team/display", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            ArrayList team = Team.getAll();
-            model.put("team", team);
+            ArrayList teams = Team.getAll();
+            model.put("teams", teams);
             return new ModelAndView(model, "team.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -37,8 +37,8 @@ public class App {
             String name = req.queryParams("name");
             String description = req.queryParams("description");
             Team newTeam = new Team(name, description, newMember);
-            ArrayList team = Team.getAll();
-            model.put("team", team);
+            ArrayList teams = Team.getAll();
+            model.put("teams", teams);
             return new ModelAndView(model, "team.hbs");
         }, new HandlebarsTemplateEngine());
 
