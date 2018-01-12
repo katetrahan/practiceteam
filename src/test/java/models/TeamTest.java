@@ -16,6 +16,12 @@ public class TeamTest {
     public void team_getName_String() {
         Team team = new Team("Hackers", "Epicodus Java Course Team");
         assertEquals("Hackers", team.getName());
+    }
+
+    @Test
+    public void team_getDescription_String() {
+        Team team = new Team("Hackers", "Epicodus Java Course Team");
+        assertEquals("Epicodus Java Course Team", team.getDescription());
 
 
     }
