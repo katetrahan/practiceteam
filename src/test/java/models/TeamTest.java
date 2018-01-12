@@ -44,8 +44,12 @@ public class TeamTest {
         Team post = setupNewTeam();
         Member newMember = new Member("Oprah", "Winfrey", "Public Figure");
         Team team = new Team("Hackers", "Java Course Team", newMember);
+        assertTrue(Team.getAll().contains(post));
         assertEquals(2, Team.getAll().size());
     }
+
+    @Test
+    public void
 
 
 

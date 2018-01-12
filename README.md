@@ -15,10 +15,16 @@ _This is an application that uses Java to allow a hack-a-thon coordinator to tra
 | **Accept 1 Team Name and return 1 Team Name**| "Team Name" | "Team Name" |
 | **Accept 1 Team Description and return 1 Team Description **| "Team Description" | "Team Description" |
 | **Accept 1 Team Member and return 1 Team Members**| "Member" | "Member"|
+| **Accept Member into Team** |"Oprah"|"Member:Oprah"|
+| **Accepts Member Description into Team** | "Public Figure"| "Description: Public Figure"|
 | **Accept 2 Team Names and return 2 Team Names**| "Team Name One, Team Name Two" | "Team Name One, Team Name Two" |
 | **Accepts 2 Members of a team and returns 2 Members of a Team**| "Member 1, Member 2" | "Member 1, Member 2" |
 | **Accepts 3 Team Names and return 3 Team Names**| "Team 1, Team 2, Team 3"|"Team 1, Team 2, Team 3"|
+| **Returns Correct Number of Entries** | "Team, Member"| "2"|
+| **Find ID of member and return correct ID| "New Member"| "1"|
+| **Find correct member when more than one member exists| "New Member, Oprah"| "2"|
 | **Edits Team Name and return New Team Name**| "Team Name"|"New Team Name"|
+
 
 
 ## Setup/Installation Requirements
