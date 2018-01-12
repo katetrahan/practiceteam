@@ -8,14 +8,7 @@ import static org.junit.Assert.*;
 
 public class MembersTest {
 
-    @Before
-    public void setUp() throws Exception {
-    }
 
-    @After
-    public void tearDown() throws Exception {
-        Members.clearAll(); //I clear out allll the posts before each test.
-    }
 
 
 
