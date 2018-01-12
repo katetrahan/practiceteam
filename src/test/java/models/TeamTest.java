@@ -49,7 +49,13 @@ public class TeamTest {
     }
 
     @Test
-    public void
+    public void AllEntriesContainsAllEntries_true() throws Exception {
+        Team post = setupNewTeam();
+        Member newMember = new Member("Oprah", "Winfrey", "Public Figure");
+        Team team = new Team("Hackers", "Java Course Team", newMember);
+        assertTrue(Team.getAll().contains(post));
+        assertTrue(Team.getAll().contains(team));
+    }
 
 
 
