@@ -14,6 +14,19 @@ public class MemberTest {
         assertEquals(true, member instanceof Member);
     }
 
+    @Test
+    public void member_getFirst_String() {
+        Member member = new Member("Oprah", "Winfrey", "Public Figure");;
+        assertEquals("Oprah", member.getFirst());
+
+    }
+
+
+
+
+
+
+
 
 
 
