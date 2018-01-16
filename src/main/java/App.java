@@ -1,4 +1,4 @@
-import models.Member;
+
 import models.Team;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
@@ -31,14 +31,23 @@ public class App {
         //post: process new post form
         post("/team/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-            String first = req.queryParams("first");
-            String last = req.queryParams("last");
-            Member newMember = new Member(first, last);
+//            ArrayList<String> member= new ArrayList();
+            String member1 = req.queryParams("member1");
+            String member2 = req.queryParams("member2");
+            String member3 = req.queryParams("member3");
+            Team.getmInstances.add();
+            Team.mInstances.add(member2);
+            Team.mInstances.add(member3);
+//            String first = req.queryParams("first");
+//            String last = req.queryParams("last");
+//            Member newMember = new Member(first, last);
             String name = req.queryParams("name");
             String description = req.queryParams("description");
-            Team newTeam = new Team(name, description, newMember);
+
+            Team newTeam = new Team(name, description, member);
             ArrayList teams = Team.getAll();
             model.put("teams", teams);
+
             return new ModelAndView(model, "team.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -66,14 +75,18 @@ public class App {
         //post: process a form to update Team
         post("/team/:memberId/edit", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            String first = request.queryParams("first");
-            String last = request.queryParams("last");
-            Member newMember = new Member(first, last);
             String name = request.queryParams("name");
             String description = request.queryParams("description");
+            ArrayList<String> member= new ArrayList();
+            String member1 = request.queryParams("member1");
+            String member2 = request.queryParams("member2");
+            String member3 = request.queryParams("member3");
+            member.add(member1);
+            member.add(member2);
+            member.add(member3);
             int idOfPostToEdit = Integer.parseInt(request.params("memberId"));
             Team foundEntry = Team.findById(idOfPostToEdit);
-            foundEntry.edit(name, description, newMember);
+            foundEntry.edit(name, description, member);
             model.put("foundEntry", foundEntry);
             return new ModelAndView(model, "details.hbs");
         }, new HandlebarsTemplateEngine());

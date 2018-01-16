@@ -5,14 +5,15 @@ import java.util.ArrayList;
 public class Team {
     private String name;
     private String description;
-    private Member member;
+    private static ArrayList<String> mInstances = new ArrayList<>();
     private static ArrayList<Team> instances = new ArrayList<>();
     private int memberId;
-    public Team(String name, String description, Member member){
+    public Team(String name, String description, String member){
         this.name = name;
         this.description = description;
-        this.member = member;
+//     this.mInstances = member;
         instances.add(this);
+        mInstances.add(member);
         this.memberId = instances.size();
     }
 
@@ -28,8 +29,19 @@ public class Team {
         return this.description;
     }
 
-    public Member getMember(){
-        return this.member;
+    public static ArrayList<String> getmInstances() {
+        return mInstances;
+    }
+
+
+
+    public String getMember() {
+        String string = "";
+        for (String eachMember: this.mInstances){
+            string += eachMember + ",";
+        }
+        return string;
+
     }
 
     public int getMemberId(){
@@ -44,10 +56,15 @@ public class Team {
         return instances.get(teamNameId-1);
     }
 
-    public void edit(String name, String description, Member member){
+    public static void addMembers (ArrayList member ){
+        mInstances = member;
+    }
+
+    public void edit(String name, String description, String member){
         this.name = name;
         this.description = description;
-        this.member = member;
+        mInstances.add(member);
+
 
     }
 
