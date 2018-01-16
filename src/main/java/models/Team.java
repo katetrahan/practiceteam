@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Team {
     private String name;
@@ -21,6 +22,10 @@ public class Team {
         instances.clear();
     }
 
+    public static void clearAllM(){ mInstances.clear();
+
+    }
+
     public String getName() {
         return this.name;
     }
@@ -33,14 +38,10 @@ public class Team {
         return mInstances;
     }
 
-
-
     public String getMember() {
-        String string = "";
-        for (String eachMember: this.mInstances){
-            string += eachMember + ",";
-        }
-        return string;
+        String memberString = mInstances.toString();
+        mInstances.removeAll(Arrays.asList("", null));
+        return memberString;
 
     }
 
@@ -56,7 +57,7 @@ public class Team {
         return instances.get(teamNameId-1);
     }
 
-    public static void addMembers (ArrayList member ){
+    public static void addMembers (ArrayList member){
         mInstances = member;
     }
 

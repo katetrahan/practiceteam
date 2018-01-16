@@ -35,16 +35,16 @@ public class App {
             String member1 = req.queryParams("member1");
             String member2 = req.queryParams("member2");
             String member3 = req.queryParams("member3");
-            Team.getmInstances.add();
-            Team.mInstances.add(member2);
-            Team.mInstances.add(member3);
+            Team.getmInstances().add(member1);
+            Team.getmInstances().add(member2);
+            Team.getmInstances().add(member3);
 //            String first = req.queryParams("first");
 //            String last = req.queryParams("last");
 //            Member newMember = new Member(first, last);
             String name = req.queryParams("name");
             String description = req.queryParams("description");
 
-            Team newTeam = new Team(name, description, member);
+            Team newTeam = new Team(name, description,"");
             ArrayList teams = Team.getAll();
             model.put("teams", teams);
 
@@ -77,16 +77,16 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             String name = request.queryParams("name");
             String description = request.queryParams("description");
-            ArrayList<String> member= new ArrayList();
+//            ArrayList<String> member= new ArrayList();
             String member1 = request.queryParams("member1");
             String member2 = request.queryParams("member2");
             String member3 = request.queryParams("member3");
-            member.add(member1);
-            member.add(member2);
-            member.add(member3);
+            Team.getmInstances().add(member1);
+            Team.getmInstances().add(member2);
+            Team.getmInstances().add(member3);
             int idOfPostToEdit = Integer.parseInt(request.params("memberId"));
             Team foundEntry = Team.findById(idOfPostToEdit);
-            foundEntry.edit(name, description, member);
+            foundEntry.edit(name, description, "");
             model.put("foundEntry", foundEntry);
             return new ModelAndView(model, "details.hbs");
         }, new HandlebarsTemplateEngine());

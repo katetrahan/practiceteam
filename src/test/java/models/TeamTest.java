@@ -22,14 +22,14 @@ public class TeamTest {
     @Test
     public void team_teamInstantiatesCorrectly_String() throws Exception {
         ArrayList<String> member= new ArrayList();
-        Team team = new Team("Hackers", "Java Course Team", member);
+        Team team = new Team("Hackers", "Java Course Team", "");
         assertEquals(true, team instanceof Team);
     }
 
     @Test
     public void team_teamInstantiatesCorrectlyWithContent_String() throws Exception {
         ArrayList<String> member= new ArrayList();
-        Team team = new Team("Hackers", "Java Course Team", member);
+        Team team = new Team("Hackers", "Java Course Team", "");
         assertEquals("Hackers",team.getName());
 
     }
@@ -37,7 +37,7 @@ public class TeamTest {
     @Test
     public void teamDescription_teamGetsDescription_String() throws Exception {
         ArrayList<String> member= new ArrayList();
-        Team team = new Team("Hackers", "Java Course Team", member);
+        Team team = new Team("Hackers", "Java Course Team", "");
         assertEquals("Java Course Team", team.getDescription());
     }
 
@@ -45,7 +45,7 @@ public class TeamTest {
     public void AllEntriesAreCorrectlyReturned_true() throws Exception {
         Team post = setupNewTeam();
         ArrayList<String> member= new ArrayList();
-        Team team = new Team("Hackers", "Java Course Team", member);
+        Team team = new Team("Hackers", "Java Course Team", "");
         assertTrue(Team.getAll().contains(post));
         assertEquals(2, Team.getAll().size());
     }
@@ -54,7 +54,7 @@ public class TeamTest {
     public void AllEntriesContainsAllEntries_true() throws Exception {
         Team post = setupNewTeam();
         ArrayList<String> member= new ArrayList();
-        Team team = new Team("Hackers", "Java Course Team", member);
+        Team team = new Team("Hackers", "Java Course Team", "");
         assertTrue(Team.getAll().contains(post));
         assertTrue(Team.getAll().contains(team));
     }
@@ -76,7 +76,7 @@ public class TeamTest {
     public void findReturnsCorrectEntryWhenMoreThanOnePostExists_Integer() throws Exception {
         Team post = setupNewTeam();
         ArrayList<String> member= new ArrayList();
-        Team team = new Team("Hackers", "Java Course Team", member);
+        Team team = new Team("Hackers", "Java Course Team", "");
         assertEquals(2, Team.findById(team.getMemberId()).getMemberId());
     }
 
@@ -87,10 +87,24 @@ public class TeamTest {
         int formerId = post.getMemberId();
 
 
-        post.edit("New Hackers", "Best Team ever ");
+        post.edit("New Hackers", "Best Team ever ","");
 
         assertEquals(formerId, post.getMemberId());
         assertNotEquals(formerName, post.getName());
+    }
+
+
+    @Test
+    public void removeCommasfromArray_String() throws Exception {
+        Team post = setupNewTeam();
+        ArrayList<String> member= new ArrayList();
+        Team.clearAll();
+        Team.clearAllM();
+        Team team = new Team("Hackers", "Java Course Team", "1");
+        Team team2 = new Team("Hackers", "Java Course Team", "2");
+        Team team3 = new Team("Hackers", "Java Course Team", "3");
+        assertEquals("[1, 2, 3]", team.getMember());
+
     }
 
 
@@ -99,7 +113,7 @@ public class TeamTest {
 
     public Team setupNewTeam(){
         ArrayList<String> member= new ArrayList();
-        return new Team("Hackers", "Java Course Team", member);
+        return new Team("Hackers", "Java Course Team", "");
     }
 
 
